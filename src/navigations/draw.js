@@ -2,13 +2,14 @@ import React from "react";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
+import RegisterGuideScreen from "../screens/RegisterGuide";
+
 const Drawer = createDrawerNavigator();
 
 const DrawNavigator = () => {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Article" component={Article} />
+      <Drawer.Screen name="RegisterGuide" component={RegisterGuideScreen} />
     </Drawer.Navigator>
   );
 };
