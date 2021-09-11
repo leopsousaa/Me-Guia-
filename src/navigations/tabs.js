@@ -3,8 +3,6 @@ import { StyleSheet, Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { getHeaderTitle } from "@react-navigation/elements";
-
 import HomeScreen from "../screens/HomeScreen";
 import ExplorerScreen from "../screens/ExplorerScreen";
 import FavoriteScreen from "../screens/FavoriteScreen";

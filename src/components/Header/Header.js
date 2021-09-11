@@ -1,5 +1,11 @@
 import React from "react";
-import { Text, StyleSheet, SafeAreaView, Image } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
 import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
@@ -21,15 +27,17 @@ const Header = () => {
     return (
       <SafeAreaView style={styles.header}>
         <StatusBar translucent barStyle="dark-content" />
-        <Image
-          source={require("../../../assets/icons/hamburguer-menu.png")}
-          resizeMode="contain"
-          style={{
-            width: RoundPixel(24),
-            height: RoundPixel(24),
-            left: RoundPixel(16),
-          }}
-        />
+        <TouchableOpacity>
+          <Image
+            source={require("../../../assets/icons/hamburguer-menu.png")}
+            resizeMode="contain"
+            style={{
+              width: RoundPixel(24),
+              height: RoundPixel(24),
+              left: RoundPixel(16),
+            }}
+          />
+        </TouchableOpacity>
         <Text
           style={{
             fontFamily: "BebasNeue-Regular",
