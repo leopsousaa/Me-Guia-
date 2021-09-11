@@ -10,6 +10,7 @@ import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
 
 import { RoundPixel } from "../utils/roundPixel";
+import { PALLET } from "../globalStyles/palletColor";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +30,7 @@ const HomeButton = ({ children, onPress }) => (
           width: RoundPixel(70),
           height: RoundPixel(70),
           borderRadius: RoundPixel(35),
-          backgroundColor: "#94AF76",
+          backgroundColor: PALLET.primaryColor,
         }}
       >
         {children}
@@ -49,7 +50,7 @@ const Tabs = () => {
           left: RoundPixel(20),
           right: RoundPixel(20),
           elevation: 0,
-          backgroundColor: "#FFF",
+          backgroundColor: PALLET.light,
           borderRadius: RoundPixel(16),
           height: RoundPixel(90),
           ...styles.shadow,
@@ -74,11 +75,14 @@ const Tabs = () => {
                 style={{
                   width: RoundPixel(25),
                   height: RoundPixel(25),
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Dicas
               </Text>
@@ -104,13 +108,16 @@ const Tabs = () => {
                 style={{
                   width: RoundPixel(25),
                   height: RoundPixel(25),
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
-                Explorer
+                Procurar
               </Text>
             </View>
           ),
@@ -127,7 +134,7 @@ const Tabs = () => {
               style={{
                 width: RoundPixel(30),
                 height: RoundPixel(30),
-                tintColor: focused ? "#fff" : "#505050",
+                tintColor: focused ? PALLET.light : PALLET.secondColor,
               }}
             />
           ),
@@ -152,11 +159,14 @@ const Tabs = () => {
                 style={{
                   width: RoundPixel(25),
                   height: RoundPixel(25),
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Favoritos
               </Text>
@@ -182,11 +192,14 @@ const Tabs = () => {
                 style={{
                   width: RoundPixel(25),
                   height: RoundPixel(25),
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Guias
               </Text>
