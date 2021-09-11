@@ -54,7 +54,7 @@ const TabsNavigator = () => {
         },
         tabBarStyle: {
           position: "absolute",
-          bottom: RoundPixel(25),
+          bottom: RoundPixel(24),
           left: RoundPixel(20),
           right: RoundPixel(20),
           elevation: 0,
@@ -81,8 +81,8 @@ const TabsNavigator = () => {
                 source={require("../../assets/icons/icon-tip.png")}
                 resizeMode="contain"
                 style={{
-                  width: RoundPixel(25),
-                  height: RoundPixel(25),
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
                   tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
@@ -114,8 +114,8 @@ const TabsNavigator = () => {
                 source={require("../../assets/icons/icon-search.png")}
                 resizeMode="contain"
                 style={{
-                  width: RoundPixel(25),
-                  height: RoundPixel(25),
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
                   tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
@@ -165,8 +165,8 @@ const TabsNavigator = () => {
                 source={require("../../assets/icons/icon-favorite.png")}
                 resizeMode="contain"
                 style={{
-                  width: RoundPixel(25),
-                  height: RoundPixel(25),
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
                   tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
@@ -198,8 +198,8 @@ const TabsNavigator = () => {
                 source={require("../../assets/icons/icon-guide.png")}
                 resizeMode="contain"
                 style={{
-                  width: RoundPixel(25),
-                  height: RoundPixel(25),
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
                   tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: RoundPixel(10),
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.24,
     shadowRadius: 3.5,
     elevation: 5,
   },

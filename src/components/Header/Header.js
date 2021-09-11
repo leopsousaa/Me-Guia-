@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, SafeAreaView } from "react-native";
+import { Text, StyleSheet, SafeAreaView, Image } from "react-native";
 
 import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
@@ -21,16 +21,33 @@ const Header = () => {
     return (
       <SafeAreaView style={styles.header}>
         <StatusBar translucent barStyle="dark-content" />
+        <Image
+          source={require("../../../assets/icons/hamburguer-menu.png")}
+          resizeMode="contain"
+          style={{
+            width: RoundPixel(24),
+            height: RoundPixel(24),
+            left: RoundPixel(16),
+          }}
+        />
         <Text
           style={{
             fontFamily: "BebasNeue-Regular",
             fontSize: 28,
-            textAlign: "center",
             color: PALLET.light,
           }}
         >
           Me Guiaê
         </Text>
+        <Image
+          source={require("../../../assets/icons/hamburguer-menu.png")}
+          resizeMode="contain"
+          style={{
+            width: RoundPixel(24),
+            height: RoundPixel(24),
+            right: RoundPixel(16),
+          }}
+        />
       </SafeAreaView>
     );
   }
@@ -40,7 +57,9 @@ const styles = StyleSheet.create({
   header: {
     height: RoundPixel(56) + RoundPixel(Constants.statusBarHeight),
     backgroundColor: PALLET.primaryColor,
-    justifyContent: "center",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
   },
 });
 export default Header;
