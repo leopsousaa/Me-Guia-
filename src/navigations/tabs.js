@@ -9,13 +9,15 @@ import FavoriteScreen from "../screens/FavoriteScreen";
 import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
 
+import { RoundPixel } from "../utils/roundPixel";
+
 const Tab = createBottomTabNavigator();
 
 const HomeButton = ({ children, onPress }) => (
   <>
     <TouchableOpacity
       style={{
-        top: -20,
+        top: RoundPixel(-20),
         justifyContent: "center",
         alignItems: "center",
         ...styles.shadow,
@@ -24,9 +26,9 @@ const HomeButton = ({ children, onPress }) => (
     >
       <View
         style={{
-          width: 70,
-          height: 70,
-          borderRadius: 35,
+          width: RoundPixel(70),
+          height: RoundPixel(70),
+          borderRadius: RoundPixel(35),
           backgroundColor: "#94AF76",
         }}
       >
@@ -43,13 +45,13 @@ const Tabs = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",
-          bottom: 25,
-          left: 20,
-          right: 20,
+          bottom: RoundPixel(25),
+          left: RoundPixel(20),
+          right: RoundPixel(20),
           elevation: 0,
           backgroundColor: "#FFF",
-          borderRadius: 15,
-          height: 90,
+          borderRadius: RoundPixel(16),
+          height: RoundPixel(90),
           ...styles.shadow,
         },
       }}
@@ -63,15 +65,15 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-tip.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: RoundPixel(25),
+                  height: RoundPixel(25),
                   tintColor: focused ? "#94AF76" : "#505050",
                 }}
               />
@@ -93,15 +95,15 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-search.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: RoundPixel(25),
+                  height: RoundPixel(25),
                   tintColor: focused ? "#94AF76" : "#505050",
                 }}
               />
@@ -123,8 +125,8 @@ const Tabs = () => {
               source={require("../../assets/icons/icon-home.png")}
               resizeMode="contain"
               style={{
-                width: 30,
-                height: 30,
+                width: RoundPixel(30),
+                height: RoundPixel(30),
                 tintColor: focused ? "#fff" : "#505050",
               }}
             />
@@ -141,15 +143,15 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-favorite.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: RoundPixel(25),
+                  height: RoundPixel(25),
                   tintColor: focused ? "#94AF76" : "#505050",
                 }}
               />
@@ -171,15 +173,15 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-guide.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
+                  width: RoundPixel(25),
+                  height: RoundPixel(25),
                   tintColor: focused ? "#94AF76" : "#505050",
                 }}
               />
@@ -201,7 +203,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 10,
+      height: RoundPixel(10),
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
