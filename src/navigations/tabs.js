@@ -3,11 +3,15 @@ import { StyleSheet, Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import { getHeaderTitle } from "@react-navigation/elements";
+
 import HomeScreen from "../screens/HomeScreen";
 import ExplorerScreen from "../screens/ExplorerScreen";
 import FavoriteScreen from "../screens/FavoriteScreen";
 import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
+
+import Header from "../components/Header";
 
 import { RoundPixel } from "../utils/roundPixel";
 import { PALLET } from "../globalStyles/palletColor";
@@ -42,8 +46,12 @@ const HomeButton = ({ children, onPress }) => (
 const TabsNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
+        header: () => {
+          return <Header />;
+        },
         tabBarStyle: {
           position: "absolute",
           bottom: RoundPixel(25),
