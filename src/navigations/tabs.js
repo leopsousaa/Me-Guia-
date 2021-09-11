@@ -39,7 +39,7 @@ const HomeButton = ({ children, onPress }) => (
   </>
 );
 
-const Tabs = () => {
+const TabsNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -224,4 +224,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Tabs;
+export default TabsNavigator;
