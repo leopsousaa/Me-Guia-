@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Image, View, Text } from "react-native";
+import { StyleSheet, Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -10,6 +10,31 @@ import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
 
 const Tab = createBottomTabNavigator();
+
+const HomeButton = ({ children, onPress }) => (
+  <>
+    <TouchableOpacity
+      style={{
+        top: -20,
+        justifyContent: "center",
+        alignItems: "center",
+        ...styles.shadow,
+      }}
+      onPress={onPress}
+    >
+      <View
+        style={{
+          width: 70,
+          height: 70,
+          borderRadius: 35,
+          backgroundColor: "#94AF76",
+        }}
+      >
+        {children}
+      </View>
+    </TouchableOpacity>
+  </>
+);
 
 const Tabs = () => {
   return (
@@ -51,7 +76,7 @@ const Tabs = () => {
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 12 }}
+                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
               >
                 Dicas
               </Text>
@@ -81,7 +106,7 @@ const Tabs = () => {
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 12 }}
+                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
               >
                 Explorer
               </Text>
@@ -94,29 +119,17 @@ const Tabs = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View
+            <Image
+              source={require("../../assets/icons/icon-home.png")}
+              resizeMode="contain"
               style={{
-                alignItems: "center",
-                justifyContent: "center",
-                top: 10,
+                width: 30,
+                height: 30,
+                tintColor: focused ? "#fff" : "#505050",
               }}
-            >
-              <Image
-                source={require("../../assets/icons/icon-home.png")}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#94AF76" : "#505050",
-                }}
-              />
-              <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 12 }}
-              >
-                Home
-              </Text>
-            </View>
+            />
           ),
+          tabBarButton: (props) => <HomeButton {...props} />,
         }}
       />
       <Tab.Screen
@@ -141,7 +154,7 @@ const Tabs = () => {
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 12 }}
+                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
               >
                 Favoritos
               </Text>
@@ -171,7 +184,7 @@ const Tabs = () => {
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 12 }}
+                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
               >
                 Guias
               </Text>
