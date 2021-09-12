@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 
-import Constants from "expo-constants";
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
@@ -15,6 +8,8 @@ import { useFonts } from "expo-font";
 import { RoundPixel } from "../../utils/roundPixel";
 
 import { PALLET } from "../../globalStyles/palletColor";
+
+import styles from "./styles";
 
 const Header = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
@@ -25,17 +20,13 @@ const Header = ({ navigation }) => {
     return <AppLoading />;
   } else {
     return (
-      <SafeAreaView style={styles.header}>
-        <StatusBar translucent barStyle="dark-content" />
+      <View style={styles.header}>
+        <StatusBar barStyle="light-content" />
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <Image
             source={require("../../../assets/icons/hamburguer-menu.png")}
             resizeMode="contain"
-            style={{
-              width: RoundPixel(24),
-              height: RoundPixel(24),
-              left: RoundPixel(16),
-            }}
+            style={styles.Icon}
           />
         </TouchableOpacity>
         <Text
@@ -43,6 +34,7 @@ const Header = ({ navigation }) => {
             fontFamily: "BebasNeue-Regular",
             fontSize: 28,
             color: PALLET.light,
+            top: RoundPixel(16),
           }}
         >
           Me Guiaê
@@ -54,20 +46,12 @@ const Header = ({ navigation }) => {
             width: RoundPixel(24),
             height: RoundPixel(24),
             right: RoundPixel(16),
+            top: RoundPixel(16),
           }}
         />
-      </SafeAreaView>
+      </View>
     );
   }
 };
 
-const styles = StyleSheet.create({
-  header: {
-    height: RoundPixel(56) + RoundPixel(Constants.statusBarHeight),
-    backgroundColor: PALLET.primaryColor,
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexDirection: "row",
-  },
-});
 export default Header;
