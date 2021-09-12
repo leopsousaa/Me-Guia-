@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     width: widthDPI(90),
     height: RoundPixel(280),
-    backgroundColor: PALLET.light,
+    backgroundColor: "#f3f3f3",
     borderRadius: RoundPixel(16),
     marginTop: RoundPixel(20),
     ...shadow.shadow,

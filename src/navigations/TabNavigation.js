@@ -14,31 +14,16 @@ import Header from "../components/Header";
 
 import { RoundPixel } from "../utils/roundPixel";
 import { PALLET } from "../globalStyles/palletColor";
-import { shadow } from "../globalStyles/shadow";
+
+import styles from "./styles";
 
 const HomeButton = ({ children, onPress }) => (
   <>
     <TouchableOpacity
-      style={{
-        top: RoundPixel(-20),
-        justifyContent: "center",
-        alignItems: "center",
-        ...shadow.shadow,
-      }}
+      style={styles.ContainerCustomButtonMenu}
       onPress={onPress}
     >
-      <View
-        style={{
-          width: RoundPixel(70),
-          height: RoundPixel(70),
-          borderRadius: RoundPixel(35),
-          backgroundColor: PALLET.primaryColor,
-          borderColor: PALLET.light,
-          borderWidth: RoundPixel(2),
-        }}
-      >
-        {children}
-      </View>
+      <View style={styles.CustomButtonMenu}>{children}</View>
     </TouchableOpacity>
   </>
 );
@@ -55,17 +40,7 @@ const Navigation = () => {
           header: () => {
             return <Header />;
           },
-          tabBarStyle: {
-            position: "absolute",
-            bottom: RoundPixel(24),
-            left: RoundPixel(20),
-            right: RoundPixel(20),
-            elevation: 0,
-            backgroundColor: PALLET.light,
-            borderRadius: RoundPixel(16),
-            height: RoundPixel(90),
-            ...shadow.shadow,
-          },
+          tabBarStyle: styles.barStyle,
         }}
       >
         <TabNavigator.Screen
@@ -73,13 +48,7 @@ const Navigation = () => {
           component={TipScreen}
           options={{
             tabBarIcon: ({ focused }) => (
-              <View
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  top: RoundPixel(10),
-                }}
-              >
+              <View style={styles.ContainerBarIcon}>
                 <Image
                   source={require("../../assets/icons/icon-tip.png")}
                   resizeMode="contain"
@@ -108,13 +77,7 @@ const Navigation = () => {
           component={ExplorerScreen}
           options={{
             tabBarIcon: ({ focused }) => (
-              <View
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  top: RoundPixel(10),
-                }}
-              >
+              <View style={styles.ContainerBarIcon}>
                 <Image
                   source={require("../../assets/icons/icon-search.png")}
                   resizeMode="contain"
@@ -161,13 +124,7 @@ const Navigation = () => {
           component={FavoriteScreen}
           options={{
             tabBarIcon: ({ focused }) => (
-              <View
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  top: RoundPixel(10),
-                }}
-              >
+              <View style={styles.ContainerBarIcon}>
                 <Image
                   source={require("../../assets/icons/icon-favorite.png")}
                   resizeMode="contain"
@@ -196,13 +153,7 @@ const Navigation = () => {
           component={GuideScreen}
           options={{
             tabBarIcon: ({ focused }) => (
-              <View
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  top: RoundPixel(10),
-                }}
-              >
+              <View style={styles.ContainerBarIcon}>
                 <Image
                   source={require("../../assets/icons/icon-guide.png")}
                   resizeMode="contain"
