@@ -16,7 +16,7 @@ import { RoundPixel } from "../../utils/roundPixel";
 
 import { PALLET } from "../../globalStyles/palletColor";
 
-const Header = () => {
+const Header = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
     "BebasNeue-Regular": require("../../../assets/fonts/BebasNeue-Regular.ttf"),
   });
@@ -27,7 +27,7 @@ const Header = () => {
     return (
       <SafeAreaView style={styles.header}>
         <StatusBar translucent barStyle="dark-content" />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <Image
             source={require("../../../assets/icons/hamburguer-menu.png")}
             resizeMode="contain"
