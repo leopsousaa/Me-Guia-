@@ -1,13 +1,17 @@
 import React from "react";
 import { Text } from "react-native";
 
-import ScreenContainer from "../../components/ScreenContainer";
+import ScrollContainer from "../../components/ScrollContainer";
+import CardsContainer from "../../components/CardsContainer";
 
 const home = () => {
   return (
-    <ScreenContainer>
-      <Text>HomeScreen</Text>
-    </ScreenContainer>
+    <ScrollContainer>
+      <CardsContainer />
+      <CardsContainer />
+      <CardsContainer />
+      <CardsContainer />
+    </ScrollContainer>
   );
 };
 

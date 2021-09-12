@@ -1,4 +1,6 @@
-import { PixelRatio } from "react-native";
+import { PixelRatio, Dimensions } from "react-native";
+
+const Wd = Dimensions.get("window").width;
 
 // This function calculates the pixel density of the device's window height and convert in percent.
 const heightDPI = (value, dimension) => {
@@ -17,8 +19,8 @@ const RoundPixel = (value) => {
 };
 
 // This function calculates the pixel density of the device's window width and convert in percent.
-const widthDPI = (value, dimension) => {
-  const widthInDPI = PixelRatio.roundToNearestPixel(dimension);
+const widthDPI = (value) => {
+  const widthInDPI = PixelRatio.roundToNearestPixel(Wd);
 
   const result = (widthInDPI * value) / 100;
 

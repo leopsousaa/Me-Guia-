@@ -33,6 +33,8 @@ const HomeButton = ({ children, onPress }) => (
           height: RoundPixel(70),
           borderRadius: RoundPixel(35),
           backgroundColor: PALLET.primaryColor,
+          borderColor: PALLET.light,
+          borderWidth: RoundPixel(2),
         }}
       >
         {children}
