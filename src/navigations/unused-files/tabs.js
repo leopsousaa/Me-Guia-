@@ -9,13 +9,18 @@ import FavoriteScreen from "../screens/FavoriteScreen";
 import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
 
+import Header from "../../components/Header";
+
+import { RoundPixel } from "../../utils/roundPixel";
+import { PALLET } from "../../globalStyles/palletColor";
+
 const Tab = createBottomTabNavigator();
 
 const HomeButton = ({ children, onPress }) => (
   <>
     <TouchableOpacity
       style={{
-        top: -20,
+        top: RoundPixel(-20),
         justifyContent: "center",
         alignItems: "center",
         ...styles.shadow,
@@ -24,10 +29,10 @@ const HomeButton = ({ children, onPress }) => (
     >
       <View
         style={{
-          width: 70,
-          height: 70,
-          borderRadius: 35,
-          backgroundColor: "#94AF76",
+          width: RoundPixel(70),
+          height: RoundPixel(70),
+          borderRadius: RoundPixel(35),
+          backgroundColor: PALLET.primaryColor,
         }}
       >
         {children}
@@ -36,20 +41,24 @@ const HomeButton = ({ children, onPress }) => (
   </>
 );
 
-const Tabs = () => {
+const TabsNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={{
         tabBarShowLabel: false,
+        header: () => {
+          return <Header />;
+        },
         tabBarStyle: {
           position: "absolute",
-          bottom: 25,
-          left: 20,
-          right: 20,
+          bottom: RoundPixel(24),
+          left: RoundPixel(20),
+          right: RoundPixel(20),
           elevation: 0,
-          backgroundColor: "#FFF",
-          borderRadius: 15,
-          height: 90,
+          backgroundColor: PALLET.light,
+          borderRadius: RoundPixel(16),
+          height: RoundPixel(90),
           ...styles.shadow,
         },
       }}
@@ -63,20 +72,23 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-tip.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Dicas
               </Text>
@@ -93,22 +105,25 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-search.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
-                Explorer
+                Procurar
               </Text>
             </View>
           ),
@@ -123,9 +138,9 @@ const Tabs = () => {
               source={require("../../assets/icons/icon-home.png")}
               resizeMode="contain"
               style={{
-                width: 30,
-                height: 30,
-                tintColor: focused ? "#fff" : "#505050",
+                width: RoundPixel(30),
+                height: RoundPixel(30),
+                tintColor: focused ? PALLET.light : PALLET.secondColor,
               }}
             />
           ),
@@ -141,20 +156,23 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-favorite.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Favoritos
               </Text>
@@ -171,20 +189,23 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 10,
+                top: RoundPixel(10),
               }}
             >
               <Image
                 source={require("../../assets/icons/icon-guide.png")}
                 resizeMode="contain"
                 style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? "#94AF76" : "#505050",
+                  width: RoundPixel(24),
+                  height: RoundPixel(24),
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
-                style={{ color: focused ? "#94AF76" : "#505050", fontSize: 10 }}
+                style={{
+                  color: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  fontSize: 10,
+                }}
               >
                 Guias
               </Text>
@@ -201,12 +222,12 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 10,
+      height: RoundPixel(10),
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.24,
     shadowRadius: 3.5,
     elevation: 5,
   },
 });
 
-export default Tabs;
+export default TabsNavigator;
