@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font'
 import { AuthNavigator } from './src/navigations/stack-navigation'
 
 const App = () => {
-  const [fontsLoaded] = useFonts({
+  let [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('./assets/fonts/BebasNeue-Regular.ttf'),
     'Inter-Thin': require('./assets/fonts/Inter-Thin.ttf'),
     'Inter-Light': require('./assets/fonts/Inter-Light.ttf'),
@@ -19,7 +19,9 @@ const App = () => {
     'Inter-Black': require('./assets/fonts/Inter-Black.ttf'),
   })
 
-  if (!fontsLoaded) (<AppLoading />)
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
 
   return (
     <NavigationContainer>
