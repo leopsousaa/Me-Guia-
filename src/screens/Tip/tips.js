@@ -3,12 +3,12 @@ import { Text } from "react-native";
 
 import ScreenContainer from "../../components/ScreenContainer";
 
-const tips = () => {
+const Tips = () => {
   return (
     <ScreenContainer>
-      <Text>TipsScreen</Text>
+      <Text>Tips</Text>
     </ScreenContainer>
   );
 };
 
-export default tips;
+export default Tips;

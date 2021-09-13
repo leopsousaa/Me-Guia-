@@ -1,19 +1,26 @@
 import React from "react";
-import { TouchableOpacity, Text, View } from "react-native";
+import { TouchableOpacity, Text, View, Pressable } from "react-native";
 
 import { PALLET } from "../../globalStyles/palletColor";
 import styles from "./styles";
 
 import { Ionicons } from "@expo/vector-icons";
 
-const CardsContainer = () => {
+const CardTip = ({
+  title,
+  time,
+  distance,
+  rating,
+  pressViewGuides,
+  pressViewTip
+}) => {
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={pressViewTip}>
       <View style={styles.row}>
-        <Text style={styles.title}>Title Route</Text>
+        <Text style={styles.title}> {title} </Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => alert("Exibir Guias Cadastrados Nesta Rota!")}
+          onPress={pressViewGuides}
         >
           <Text style={styles.textBtn}>Ver Guias</Text>
         </TouchableOpacity>
@@ -25,7 +32,7 @@ const CardsContainer = () => {
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}>Time</Text>
+          <Text style={styles.Text}> {time} </Text>
         </View>
         <View style={styles.row}>
           <Ionicons
@@ -33,15 +40,15 @@ const CardsContainer = () => {
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}>20km</Text>
+          <Text style={styles.Text}> {distance} </Text>
         </View>
         <View style={styles.column}>
           <Ionicons name="heart-sharp" size={24} color={PALLET.primaryColor} />
-          <Text style={styles.Text}>4.9</Text>
+          <Text style={styles.Text}> {rating} </Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
-export default CardsContainer;
+export default CardTip;
