@@ -11,7 +11,7 @@ import Guide from '../../screens/Guide'
 const { Navigator, Group, Screen } = createStackNavigator()
 
 const AuthNavigator = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true)
+  const [isSignedIn, setIsSignedIn] = useState(false)
 
   return (
     <Navigator screenOptions={{
