@@ -36,7 +36,7 @@ const HomeNavigator = () => {
     }}>
       <Screen name='Home Navigator' component={Home} />
       <Screen name='Tip' component={Tip} />
-      <Screen name='Guide' component={Guide} />
+      <Screen name='Guides' component={Guide} />
     </Navigator>
   )
 }
