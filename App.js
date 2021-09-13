@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
-import TabNavigation from "./src/navigations/TabNavigation";
+import { AuthNavigator } from './src/navigations/stack-navigation';
 
 const App = () => {
-  return <TabNavigation />;
+  return (
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+  )
 };
 
-export default App;
+export default App

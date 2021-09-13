@@ -1,8 +1,8 @@
 import { StyleSheet, Platform } from "react-native";
 
-import { RoundPixel } from "../utils/roundPixel";
-import { PALLET } from "../globalStyles/palletColor";
-import { shadow } from "../globalStyles/shadow";
+import { RoundPixel } from "../../utils/roundPixel";
+import { PALLET } from "../../globalStyles/palletColor";
+import { shadow } from "../../globalStyles/shadow";
 
 const styles = StyleSheet.create({
   ContainerCustomButtonMenu: {
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     height: RoundPixel(80),
     ...shadow.shadow,
   },
-
   ContainerBarIcon: {
     alignItems: "center",
     justifyContent: "center",

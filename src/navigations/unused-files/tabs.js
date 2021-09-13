@@ -9,10 +9,10 @@ import FavoriteScreen from "../screens/FavoriteScreen";
 import GuideScreen from "../screens/GuideScreen";
 import TipScreen from "../screens/TipScreen";
 
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
-import { RoundPixel } from "../utils/roundPixel";
-import { PALLET } from "../globalStyles/palletColor";
+import { RoundPixel } from "../../utils/roundPixel";
+import { PALLET } from "../../globalStyles/palletColor";
 
 const Tab = createBottomTabNavigator();
 
