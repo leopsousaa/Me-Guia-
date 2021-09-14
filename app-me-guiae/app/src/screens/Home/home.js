@@ -1,7 +1,7 @@
 import React from "react";
 
 import ScrollContainer from "../../components/ScrollContainer";
-import CardTip from "../../components/CardTip";
+import CardRoute from "../../components/CardRoute";
 
 import { DB } from "../../services/FakeAPI";
 
@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
   return (
     <ScrollContainer>
       {DB.map((item) => (
-        <CardTip
+        <CardRoute
           key={item.id}
           title={item.name}
           time={item.time}
