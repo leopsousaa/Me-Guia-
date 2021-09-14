@@ -10,7 +10,7 @@ import FavoriteScreen from "../../screens/Favorite";
 import GuideScreen from "../../screens/Guide";
 import TipScreen from "../../screens/Tip";
 
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 
 import { RoundPixel } from "../../utils/roundPixel";
 import { PALLET } from "../../globalStyles/palletColor";

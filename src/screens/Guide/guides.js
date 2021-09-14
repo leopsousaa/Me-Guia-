@@ -16,6 +16,7 @@ const Guides = ({ navigation }) => {
     <ScrollContainer>
       {DATA_GUIDE_FAKE.map((item) => (
         <CardGuide
+          key={item.id}
           pressViewDetails={() => handleGuideNavigation(item.id)}
           thumbnail={item.thumbnail}
           fullName={item.fullName}

@@ -12,6 +12,12 @@ const Home = ({ navigation }) => {
     });
   }
 
+  function handleGuideNavigation(id) {
+    navigation.navigate("Guides", {
+      id,
+    });
+  }
+
   return (
     <ScrollContainer>
       {DB.map((item) => (
