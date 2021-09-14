@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, View, Pressable } from "react-native";
+import { Text, View, Pressable, Image } from "react-native";
 
 import { PALLET } from "../../globalStyles/palletColor";
 import styles from "./styles";
@@ -7,23 +7,16 @@ import { viewStyles } from "../../globalStyles/viewStyles";
 
 import { Ionicons } from "@expo/vector-icons";
 
-const CardFavorite = ({
-  title,
-  time,
-  distance,
-  rating,
-  pressViewGuides,
-  pressViewTip,
-}) => {
+const CardRoute = ({ title, time, distance, rating, thumbnail }) => {
   return (
-    <Pressable style={styles.container} onPress={pressViewTip}>
-      <View style={viewStyles.row}>
-        <Text style={styles.title}> {title} </Text>
-        <TouchableOpacity style={styles.button} onPress={pressViewGuides}>
-          <Text style={styles.textBtn}>Ver Guias</Text>
-        </TouchableOpacity>
+    <Pressable style={styles.container} onPress={() => alert("view route")}>
+      <Image source={{ uri: thumbnail }} style={styles.Thumbnail} />
+
+      <View style={styles.containerTitle}>
+        <Text style={styles.title}>{title}</Text>
       </View>
-      <View style={viewStyles.rowEnd}>
+
+      <View style={styles.cardInfo}>
         <View style={viewStyles.row}>
           <Ionicons
             name="md-time-sharp"
@@ -49,4 +42,4 @@ const CardFavorite = ({
   );
 };
 
-export default CardFavorite;
+export default CardRoute;
