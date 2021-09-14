@@ -1,23 +1,47 @@
-import React from "react";
-import { Text, Button } from "react-native";
+import React, { useState } from 'react'
+import { View, Text, Image, Pressable } from 'react-native'
 
-// import { AuthContext } from "../../context/authContext";
+import { firebase } from '../../services/firebase'
 
-import ScreenContainer from "../../components/ScreenContainer";
+import ScreenContainer from '../../components/ScreenContainer'
+import LoginInput from '../../components/LoginInput/LoginInput'
+
+import { styles } from './styles'
 
 const SignIn = ({ navigation }) => {
-  // const { signIn } = React.useContext(AuthContext);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [visiblePassword, setVisiblePassword] = useState(false)
+
+  function handleSignIn() {
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(res => console.log(res))
+  }
 
   return (
     <ScreenContainer>
-      <Text>Sign In Screen</Text>
-      <Button title="Sign In" onPress={() => { }} />
-      <Button
-        title="Create Account"
-        onPress={() => { }}
-      />
+      <Image style={styles.logo} resizeMode='cover' />
+      <View>
+        <LoginInput 
+          placeholder='Email'
+          iconName='mail-outline'
+          event={e => setEmail(e)}
+        />
+        <LoginInput
+          placeholder='Senha'
+          iconName='lock-closed-outline'
+          event={e => setPassword(e)}
+          hidePass={visiblePassword}
+          toggleHidePass={() => setVisiblePassword(!visiblePassword)}
+        />
+        <Pressable>
+          <Text>Entrar</Text>
+        </Pressable>
+      </View>
     </ScreenContainer>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn

@@ -35,10 +35,8 @@ const Navigation = () => {
     <TabNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
-        header: () => {
-          return <Header />;
-        },
         tabBarStyle: styles.barStyle,
       }}
     >

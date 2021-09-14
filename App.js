@@ -3,10 +3,10 @@ import { NavigationContainer } from '@react-navigation/native'
 import AppLoading from 'expo-app-loading'
 import { useFonts } from 'expo-font'
 
-import { AuthNavigator } from './src/navigations/stack-navigation'
+import DrawerNavigator from './src/navigations/drawer-navigation'
 
 const App = () => {
-  const [fontsLoaded] = useFonts({
+  let [fontsLoaded] = useFonts({
     'BebasNeue-Regular': require('./assets/fonts/BebasNeue-Regular.ttf'),
     'Inter-Thin': require('./assets/fonts/Inter-Thin.ttf'),
     'Inter-Light': require('./assets/fonts/Inter-Light.ttf'),
@@ -19,11 +19,13 @@ const App = () => {
     'Inter-Black': require('./assets/fonts/Inter-Black.ttf'),
   })
 
-  if (!fontsLoaded) (<AppLoading />)
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
 
   return (
     <NavigationContainer>
-      <AuthNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   )
 };
