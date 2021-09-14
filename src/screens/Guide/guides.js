@@ -7,7 +7,7 @@ import { DATA_GUIDE_FAKE } from "./data";
 
 const Guides = ({ navigation }) => {
   function handleGuideNavigation(id) {
-    navigation.navigate("DetailsGuide", {
+    navigation.navigate("Details Guide", {
       id,
     });
   }

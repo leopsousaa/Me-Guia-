@@ -3,10 +3,10 @@ import { View, Text } from "react-native";
 
 // import { Container } from './styles';
 
-const DetailsGuide = () => {
+const DetailsGuide = ({route}) => {
   return (
     <View>
-      <Text>Details Guide</Text>
+      <Text> {route.params.id} </Text>
     </View>
   );
 };
