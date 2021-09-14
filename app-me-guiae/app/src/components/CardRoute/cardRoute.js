@@ -7,7 +7,7 @@ import { viewStyles } from "../../globalStyles/viewStyles";
 
 import { Ionicons } from "@expo/vector-icons";
 
-const CardTip = ({
+const CardRoute = ({
   title,
   time,
   distance,
@@ -49,4 +49,4 @@ const CardTip = ({
   );
 };
 
-export default CardTip;
+export default CardRoute;
