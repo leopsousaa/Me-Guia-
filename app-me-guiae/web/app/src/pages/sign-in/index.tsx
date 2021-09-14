@@ -1,4 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
+import { AuthContext } from '../../context/authContext'
+
+import { firebase } from '../../config/firebase'
 
 import { InputLogin } from '../../components/inputs/input-login'
 
@@ -20,6 +26,31 @@ const SignIn: React.FC = () => {
   const [pass, setPass] = useState('')
   const [passErr, setPassErr] = useState(false)
   const [buttonDisabled, setButtonDisabled] = useState(false)
+  const auth = getAuth(firebase)
+  const history = useHistory()
+
+  const { setIsAuth } = useContext(AuthContext)
+
+  function handleLogin() {
+    if (!email) return setEmailErr(true)
+    if (!pass) return setPassErr(true)
+
+    signInWithEmailAndPassword(auth, email, pass)
+      .then(res => {
+        if (res.user.uid) {
+          setIsAuth(true)
+          history.push('/dashboard')
+        }
+      })
+      .catch(err => {
+        if (err.code === 'auth/invalid-email') {
+          setEmailErr(true)
+        }
+        if (err.code === 'auth/wrong-password') {
+          setPassErr(true)
+        }
+      })
+  }
 
   return (
     <Container>
@@ -39,7 +70,7 @@ const SignIn: React.FC = () => {
             onChange={e => setPass(e.currentTarget.value)}
             error={passErr}
           />
-          <Button disabled={buttonDisabled}>
+          <Button disabled={buttonDisabled} onClick={() => handleLogin()}>
             <TextButton>Entrar</TextButton>
           </Button>
         </InputsWapper>
