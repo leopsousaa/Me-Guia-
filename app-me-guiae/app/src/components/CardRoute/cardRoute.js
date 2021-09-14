@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, View, Pressable } from "react-native";
+import { TouchableOpacity, Text, View, Image, Pressable } from "react-native";
 
 import { PALLET } from "../../globalStyles/palletColor";
 import styles from "./styles";
@@ -7,16 +7,18 @@ import { viewStyles } from "../../globalStyles/viewStyles";
 
 import { Ionicons } from "@expo/vector-icons";
 
-const CardFavorite = ({
+const CardRoute = ({
+  image,
   title,
   time,
   distance,
   rating,
   pressViewGuides,
-  pressViewTip,
+  pressViewRoute,
 }) => {
   return (
-    <Pressable style={styles.container} onPress={pressViewTip}>
+    <Pressable style={styles.container} onPress={pressViewRoute}>
+      <Image source={{ uri: image }} style={styles.image} />
       <View style={viewStyles.row}>
         <Text style={styles.title}> {title} </Text>
         <TouchableOpacity style={styles.button} onPress={pressViewGuides}>
@@ -49,4 +51,4 @@ const CardFavorite = ({
   );
 };
 
-export default CardFavorite;
+export default CardRoute;

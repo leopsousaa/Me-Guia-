@@ -13,6 +13,13 @@ const styles = StyleSheet.create({
     marginTop: RoundPixel(20),
     ...shadow.shadow,
   },
+  image: {
+    width: widthDPI(90),
+    height: RoundPixel(280),
+    position: "absolute",
+    borderRadius: RoundPixel(16),
+  },
+
   button: {
     paddingLeft: RoundPixel(12),
     paddingRight: RoundPixel(12),
@@ -29,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingLeft: RoundPixel(16),
     top: RoundPixel(16),
-    color: PALLET.secondColor,
+    color: PALLET.light,
     fontWeight: "bold",
   },
   textBtn: {
@@ -37,7 +44,7 @@ const styles = StyleSheet.create({
     fontWeight: `bold`,
   },
   Text: {
-    color: PALLET.secondColor,
+    color: PALLET.light,
     fontWeight: `bold`,
   },
 });

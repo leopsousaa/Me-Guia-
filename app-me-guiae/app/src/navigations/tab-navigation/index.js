@@ -3,11 +3,9 @@ import { Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "../../screens/Home";
 import { HomeNavigator, GuideNavigator } from "../stack-navigation";
 import ExplorerScreen from "../../screens/Explorer";
 import FavoriteScreen from "../../screens/Favorite";
-import GuideScreen from "../../screens/Guide";
 import TipScreen from "../../screens/Tip";
 
 // import Header from "../../components/Header";
