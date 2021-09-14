@@ -1,13 +1,32 @@
 import React from "react";
-import { Text } from "react-native";
 
-import ScreenContainer from "../../components/ScreenContainer";
+import CardGuide from "../../components/CardGuide/CardGuide";
+import ScrollContainer from "../../components/ScrollContainer";
 
-const Guides = () => {
+import { DATA_GUIDE_FAKE } from "./data";
+
+const Guides = ({ navigation }) => {
+  function handleGuideNavigation(id) {
+    navigation.navigate("Details Guide", {
+      id,
+    });
+  }
+
   return (
-    <ScreenContainer>
-      <Text>Guides</Text>
-    </ScreenContainer>
+    <ScrollContainer>
+      {DATA_GUIDE_FAKE.map((item) => (
+        <CardGuide
+          pressViewDetails={() => handleGuideNavigation(item.id)}
+          thumbnail={item.thumbnail}
+          fullName={item.fullName}
+          age={item.age}
+          city={item.city}
+          description={item.description}
+          achievements={item.achievements}
+          specialties={item.specialties}
+        />
+      ))}
+    </ScrollContainer>
   );
 };
 
