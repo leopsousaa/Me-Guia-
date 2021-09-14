@@ -1,38 +1,43 @@
-import React, { useEffect } from 'react'
-import * as WebBrowser from 'expo-web-browser'
-import { ResponseType } from 'expo-auth-session'
-import * as Google from 'expo-auth-session/providers/google'
+import React, { useState } from 'react'
 import { View, Text, Image, Pressable } from 'react-native'
 
 import { firebase } from '../../services/firebase'
 
 import ScreenContainer from '../../components/ScreenContainer'
+import LoginInput from '../../components/LoginInput/LoginInput'
+
 import { styles } from './styles'
 
-WebBrowser.maybeCompleteAuthSession()
-
 const SignIn = ({ navigation }) => {
-  const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId: '759065742560-ikpkfb7m7d0l4bh72msf8bjv6r4ea00m.apps.googleusercontent.com'
-  })
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [visiblePassword, setVisiblePassword] = useState(false)
 
-  console.log({REQ: request, RES:response})
-
-  useEffect(() => {
-    if(response?.type === 'success') {
-      const { id_token } = response.params
-
-      const credential = firebase.auth.GoogleAuthProvider.credential(id_token)
-      firebase.auth().signInWithCredential(credential)
-    }
-  }, [])
+  function handleSignIn() {
+    firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(res => console.log(res))
+  }
 
   return (
     <ScreenContainer>
       <Image style={styles.logo} resizeMode='cover' />
       <View>
-        <Pressable disabled={!request} onPress={() => promptAsync()}>
-          <Text>Login com o google</Text>
+        <LoginInput 
+          placeholder='Email'
+          iconName='mail-outline'
+          event={e => setEmail(e)}
+        />
+        <LoginInput
+          placeholder='Senha'
+          iconName='lock-closed-outline'
+          event={e => setPassword(e)}
+          hidePass={visiblePassword}
+          toggleHidePass={() => setVisiblePassword(!visiblePassword)}
+        />
+        <Pressable>
+          <Text>Entrar</Text>
         </Pressable>
       </View>
     </ScreenContainer>

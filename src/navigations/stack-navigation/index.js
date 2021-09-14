@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import DrawerNavigator from '../drawer-navigation'
 import SignIn from '../../screens/SignIn'
 import SignUp from '../../screens/SignUp'
 import Home from '../../screens/Home'
 import Tip from '../../screens/Tip'
 import Guide from '../../screens/Guide'
+import Schedule from '../../screens/Schedule'
 
 const { Navigator, Group, Screen } = createStackNavigator()
 
 const AuthNavigator = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [isSignedIn, setIsSignedIn] = useState(true)
 
   return (
     <Navigator screenOptions={{
       headerShown: false
     }}>
       {isSignedIn ?
-        <Screen name='Auth' component={DrawerNavigator} />
+        <Screen name='Auth' component={Schedule} />
         :
         <Group>
           <Screen name='SignIn' component={SignIn} />

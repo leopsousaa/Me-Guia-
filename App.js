@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import AppLoading from 'expo-app-loading'
 import { useFonts } from 'expo-font'
 
-import { AuthNavigator } from './src/navigations/stack-navigation'
+import DrawerNavigator from './src/navigations/drawer-navigation'
 
 const App = () => {
   let [fontsLoaded] = useFonts({
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <AuthNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   )
 };
