@@ -13,24 +13,6 @@ const styles = StyleSheet.create({
     marginTop: RoundPixel(20),
     ...shadow.shadow,
   },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  column: {
-    flexDirection: "column-reverse",
-  },
-  rowEnd: {
-    flexDirection: "row",
-    alignSelf: "center",
-    justifyContent: "space-between",
-    width: widthDPI(90),
-    position: "absolute",
-    bottom: RoundPixel(8),
-    paddingLeft: RoundPixel(16),
-    paddingRight: RoundPixel(16),
-  },
   button: {
     paddingLeft: RoundPixel(12),
     paddingRight: RoundPixel(12),

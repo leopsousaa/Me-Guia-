@@ -3,7 +3,8 @@ import { Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { HomeNavigator } from "../stack-navigation";
+import HomeScreen from "../../screens/Home";
+import { HomeNavigator, GuideNavigator } from "../stack-navigation";
 import ExplorerScreen from "../../screens/Explorer";
 import FavoriteScreen from "../../screens/Favorite";
 import GuideScreen from "../../screens/Guide";
@@ -51,9 +52,7 @@ const Navigation = () => {
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused
-                    ? PALLET.primaryColor
-                    : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
@@ -80,9 +79,7 @@ const Navigation = () => {
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused
-                    ? PALLET.primaryColor
-                    : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
@@ -127,9 +124,7 @@ const Navigation = () => {
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused
-                    ? PALLET.primaryColor
-                    : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
@@ -146,7 +141,7 @@ const Navigation = () => {
       />
       <TabNavigator.Screen
         name="Guide"
-        component={GuideScreen}
+        component={GuideNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <View style={styles.ContainerBarIcon}>
@@ -156,9 +151,7 @@ const Navigation = () => {
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused
-                    ? PALLET.primaryColor
-                    : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
                 }}
               />
               <Text
