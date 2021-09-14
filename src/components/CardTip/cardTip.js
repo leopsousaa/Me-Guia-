@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, View, Pressable } from "react-native";
 
 import { PALLET } from "../../globalStyles/palletColor";
 import styles from "./styles";
+import { viewStyles } from "../../globalStyles/viewStyles";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -12,21 +13,18 @@ const CardTip = ({
   distance,
   rating,
   pressViewGuides,
-  pressViewTip
+  pressViewTip,
 }) => {
   return (
     <Pressable style={styles.container} onPress={pressViewTip}>
-      <View style={styles.row}>
+      <View style={viewStyles.row}>
         <Text style={styles.title}> {title} </Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={pressViewGuides}
-        >
+        <TouchableOpacity style={styles.button} onPress={pressViewGuides}>
           <Text style={styles.textBtn}>Ver Guias</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.rowEnd}>
-        <View style={styles.row}>
+      <View style={viewStyles.rowEnd}>
+        <View style={viewStyles.row}>
           <Ionicons
             name="md-time-sharp"
             size={24}
@@ -34,7 +32,7 @@ const CardTip = ({
           />
           <Text style={styles.Text}> {time} </Text>
         </View>
-        <View style={styles.row}>
+        <View style={viewStyles.row}>
           <Ionicons
             name="location-sharp"
             size={24}
@@ -42,7 +40,7 @@ const CardTip = ({
           />
           <Text style={styles.Text}> {distance} </Text>
         </View>
-        <View style={styles.column}>
+        <View style={viewStyles.columnReverse}>
           <Ionicons name="heart-sharp" size={24} color={PALLET.primaryColor} />
           <Text style={styles.Text}> {rating} </Text>
         </View>

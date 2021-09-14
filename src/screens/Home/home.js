@@ -1,26 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import ScrollContainer from '../../components/ScrollContainer'
-import CardTip from '../../components/CardTip'
+import ScrollContainer from "../../components/ScrollContainer";
+import CardTip from "../../components/CardTip";
 
-import { DB } from '../../services/FakeAPI'
+import { DB } from "../../services/FakeAPI";
 
 const Home = ({ navigation }) => {
-  function handleGuideNavigation(id) {
-    navigation.navigate('Guides', {
-      id
-    })
+  function handleTipNavigation(id) {
+    navigation.navigate("Tip", {
+      id,
+    });
   }
 
-  function handleTipNavigation(id) {
-    navigation.navigate('Tip', {
-      id
-    })
+  function handleGuideNavigation(id) {
+    navigation.navigate("Guides", {
+      id,
+    });
   }
 
   return (
     <ScrollContainer>
-      {DB.map(item => (
+      {DB.map((item) => (
         <CardTip
           key={item.id}
           title={item.name}
@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
         />
       ))}
     </ScrollContainer>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
