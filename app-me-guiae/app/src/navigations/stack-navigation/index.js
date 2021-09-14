@@ -5,6 +5,7 @@ import Home from "../../screens/Home";
 import Tip from "../../screens/Tip";
 import Guide from "../../screens/Guide";
 import DetailsGuide from "../../screens/DetailsGuide";
+import DetailsRoute from "../../screens/DetailsRoute";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -19,6 +20,7 @@ const HomeNavigator = () => {
       <Screen name="Tip" component={Tip} />
       <Screen name="Guides" component={Guide} />
       <Screen name="Details Guide" component={DetailsGuide} />
+      <Screen name="Details Route" component={DetailsRoute} />
     </Navigator>
   );
 };

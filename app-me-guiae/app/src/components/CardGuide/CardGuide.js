@@ -5,12 +5,7 @@ import { PALLET } from "../../globalStyles/palletColor";
 import { shadow } from "../../globalStyles/shadow";
 import { RoundPixel, widthDPI } from "../../utils/roundPixel";
 
-import { viewStyles } from "../../globalStyles/viewStyles";
-import ScrollContainer from "../ScrollContainer";
-
 import { Ionicons } from "@expo/vector-icons";
-
-import { dataGuideFake, dataRouteFake } from "../../screens/Guide/data";
 
 const CardGuide = ({
   id,
@@ -25,7 +20,11 @@ const CardGuide = ({
 }) => {
   return (
     <>
-      <Pressable style={styles.CardContainer} onPress={pressViewDetails}>
+      <Pressable
+        style={styles.CardContainer}
+        onPress={pressViewDetails}
+        key={id}
+      >
         <Image source={{ uri: thumbnail }} style={styles.Thumbnail} />
         <View style={styles.CardInfo}>
           <Text style={styles.text}>

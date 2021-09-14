@@ -6,9 +6,14 @@ import CardRoute from "../../components/CardRoute";
 import { DB } from "../../services/FakeAPI";
 
 const Home = ({ navigation }) => {
-  function handleTipNavigation(id) {
-    navigation.navigate("Tip", {
+  function handleRouteNavigation(id, image, title, time, distance, rating) {
+    navigation.navigate("Details Route", {
       id,
+      image,
+      title,
+      time,
+      distance,
+      rating,
     });
   }
 
@@ -23,12 +28,13 @@ const Home = ({ navigation }) => {
       {DB.map((item) => (
         <CardRoute
           key={item.id}
+          image={item.image}
           title={item.name}
           time={item.time}
           distance={item.distance}
           rating={item.rating}
           pressViewGuides={() => handleGuideNavigation(item.id)}
-          pressViewTip={() => handleTipNavigation(item.id)}
+          pressViewRoute={() => handleRouteNavigation(item.id)}
         />
       ))}
     </ScrollContainer>

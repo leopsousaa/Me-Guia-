@@ -1,5 +1,7 @@
+LogBox.ignoreAllLogs(true);
+
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, LogBox } from "react-native";
 
 import ScrollContainer from "../../components/ScrollContainer";
 
@@ -8,9 +10,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { styles } from "./styles";
 
 const DetailsGuide = ({ route }) => {
-  // console.warn(route);
   return (
-    <>
+    <View
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      key={route.params.id}
+    >
       <View style={styles.containerImage}>
         <Image source={{ uri: route.params.cape }} style={styles.cape} />
         <Image
@@ -58,7 +62,7 @@ const DetailsGuide = ({ route }) => {
           </View>
         </View>
       </ScrollContainer>
-    </>
+    </View>
   );
 };
 
