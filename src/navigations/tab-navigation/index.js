@@ -3,7 +3,6 @@ import { Image, View, Text, TouchableOpacity } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "../../screens/Home";
 import { HomeNavigator } from "../stack-navigation";
 import ExplorerScreen from "../../screens/Explorer";
 import FavoriteScreen from "../../screens/Favorite";
@@ -35,10 +34,8 @@ const Navigation = () => {
     <TabNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
-        header: () => {
-          return <Header />
-        },
         tabBarStyle: styles.barStyle,
       }}
     >
