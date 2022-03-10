@@ -1,22 +1,25 @@
-import React from "react";
-import AppLoading from "expo-app-loading";
+import 'react-native-gesture-handler'
+import React from 'react'
+import { View, Text } from 'react-native'
 
-import { fontsLoaded } from "./font";
+// import AppLoading from 'expo-app-loading'
 
-import DrawerNavigator from "./src/navigations/drawer-navigation";
+// import { fontsLoaded } from './font'
 
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from '@react-navigation/native'
 
 const App: React.FC = () => {
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  // if (!fontsLoaded) {
+  //   return <AppLoading />
+  // }
 
   return (
     <NavigationContainer>
-      <DrawerNavigator />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>teste</Text>
+      </View>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default App;
+export default App
