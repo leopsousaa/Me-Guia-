@@ -4,9 +4,8 @@ import { useFonts } from 'expo-font'
 
 import AppLoading from 'expo-app-loading'
 
-import { View, Text } from 'react-native'
-
 import { NavigationContainer } from '@react-navigation/native'
+import DrawerNavigator from './src/navigations/drawer-navigation'
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -28,9 +27,7 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer>
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>DesenCoder...</Text>
-      </View>
+      <DrawerNavigator />
     </NavigationContainer>
   )
 }
