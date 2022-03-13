@@ -1,7 +1,7 @@
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import TabNavigator from '../tab-navigation'
+import TabNavigator from '../tab'
 
 const { Navigator, Screen } = createDrawerNavigator()
 

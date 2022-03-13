@@ -1,19 +1,19 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import Home from "../../screens/Home";
-import Tip from "../../screens/Tip";
-import Guide from "../../screens/Guide";
-import DetailsGuide from "../../screens/DetailsGuide";
-import DetailsRoute from "../../screens/DetailsRoute";
+import Home from '../../screens/Home'
+import Tip from '../../screens/Tip'
+import Guide from '../../screens/Guide'
+import DetailsGuide from '../../screens/DetailsGuide'
+import DetailsRoute from '../../screens/DetailsRoute'
 
-const { Navigator, Screen } = createStackNavigator();
+const { Navigator, Screen } = createStackNavigator()
 
 const HomeNavigator = () => {
   return (
     <Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: false
       }}
     >
       <Screen name="Home Navigator" component={Home} />
@@ -22,20 +22,20 @@ const HomeNavigator = () => {
       <Screen name="Details Guide" component={DetailsGuide} />
       <Screen name="Details Route" component={DetailsRoute} />
     </Navigator>
-  );
-};
+  )
+}
 
 const GuideNavigator = () => {
   return (
     <Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: false
       }}
     >
       <Screen name="Guide Navigator" component={Guide} />
       <Screen name="Details Guide" component={DetailsGuide} />
     </Navigator>
-  );
-};
+  )
+}
 
-export { HomeNavigator, GuideNavigator };
+export { HomeNavigator, GuideNavigator }
