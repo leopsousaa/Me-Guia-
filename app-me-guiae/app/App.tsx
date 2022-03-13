@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 
 import { NavigationContainer } from '@react-navigation/native'
-import DrawerNavigator from './src/navigations/drawer-navigation'
+import DrawerNavigator from './src/navigations/drawerNavigator'
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({

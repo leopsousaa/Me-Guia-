@@ -1,19 +1,19 @@
-import * as React from "react";
-import { Image, View, Text, TouchableOpacity } from "react-native";
+import * as React from 'react'
+import { Image, View, Text, TouchableOpacity } from 'react-native'
 
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { HomeNavigator, GuideNavigator } from "../stack-navigation";
-import ExplorerScreen from "../../screens/Explorer";
-import FavoriteScreen from "../../screens/Favorite";
-import TipScreen from "../../screens/Tip";
+import { HomeNavigator, GuideNavigator } from '../stack-navigation'
+import ExplorerScreen from '../../screens/Explorer'
+import FavoriteScreen from '../../screens/Favorite'
+import TipScreen from '../../screens/Tip'
 
 // import Header from "../../components/Header";
 
-import { RoundPixel } from "../../utils/roundPixel";
-import { PALLET } from "../../globalStyles/palletColor";
+import { RoundPixel } from '../../utils/roundPixel'
+import { PALLET } from '../../globalStyles/palletColor'
 
-import styles from "./styles";
+import styles from './styles'
 
 const HomeButton = ({ children, onPress }) => (
   <>
@@ -24,9 +24,9 @@ const HomeButton = ({ children, onPress }) => (
       <View style={styles.CustomButtonMenu}>{children}</View>
     </TouchableOpacity>
   </>
-);
+)
 
-const TabNavigator = createBottomTabNavigator();
+const TabNavigator = createBottomTabNavigator()
 
 const Navigation = () => {
   return (
@@ -35,7 +35,7 @@ const Navigation = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: styles.barStyle,
+        tabBarStyle: styles.barStyle
       }}
     >
       <TabNavigator.Screen
@@ -45,24 +45,24 @@ const Navigation = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.ContainerBarIcon}>
               <Image
-                source={require("../../../assets/icons/icon-tip.png")}
+                source={require('../../../assets/icons/icon-tip.png')}
                 resizeMode="contain"
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor
                 }}
               />
               <Text
                 style={{
                   color: focused ? PALLET.primaryColor : PALLET.secondColor,
-                  fontSize: 10,
+                  fontSize: 10
                 }}
               >
                 Dicas
               </Text>
             </View>
-          ),
+          )
         }}
       />
       <TabNavigator.Screen
@@ -72,24 +72,24 @@ const Navigation = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.ContainerBarIcon}>
               <Image
-                source={require("../../../assets/icons/icon-search.png")}
+                source={require('../../../assets/icons/icon-search.png')}
                 resizeMode="contain"
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor
                 }}
               />
               <Text
                 style={{
                   color: focused ? PALLET.primaryColor : PALLET.secondColor,
-                  fontSize: 10,
+                  fontSize: 10
                 }}
               >
                 Procurar
               </Text>
             </View>
-          ),
+          )
         }}
       />
       <TabNavigator.Screen
@@ -98,16 +98,16 @@ const Navigation = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
-              source={require("../../../assets/icons/icon-home.png")}
+              source={require('../../../assets/icons/icon-home.png')}
               resizeMode="contain"
               style={{
                 width: RoundPixel(30),
                 height: RoundPixel(30),
-                tintColor: focused ? PALLET.light : PALLET.secondColor,
+                tintColor: focused ? PALLET.light : PALLET.secondColor
               }}
             />
           ),
-          tabBarButton: (props) => <HomeButton {...props} />,
+          tabBarButton: props => <HomeButton {...props} />
         }}
       />
       <TabNavigator.Screen
@@ -117,24 +117,24 @@ const Navigation = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.ContainerBarIcon}>
               <Image
-                source={require("../../../assets/icons/icon-favorite.png")}
+                source={require('../../../assets/icons/icon-favorite.png')}
                 resizeMode="contain"
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor
                 }}
               />
               <Text
                 style={{
                   color: focused ? PALLET.primaryColor : PALLET.secondColor,
-                  fontSize: 10,
+                  fontSize: 10
                 }}
               >
                 Favoritos
               </Text>
             </View>
-          ),
+          )
         }}
       />
       <TabNavigator.Screen
@@ -144,28 +144,28 @@ const Navigation = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.ContainerBarIcon}>
               <Image
-                source={require("../../../assets/icons/icon-guide.png")}
+                source={require('../../../assets/icons/icon-guide.png')}
                 resizeMode="contain"
                 style={{
                   width: RoundPixel(24),
                   height: RoundPixel(24),
-                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor,
+                  tintColor: focused ? PALLET.primaryColor : PALLET.secondColor
                 }}
               />
               <Text
                 style={{
                   color: focused ? PALLET.primaryColor : PALLET.secondColor,
-                  fontSize: 10,
+                  fontSize: 10
                 }}
               >
                 Guias
               </Text>
             </View>
-          ),
+          )
         }}
       />
     </TabNavigator.Navigator>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation
