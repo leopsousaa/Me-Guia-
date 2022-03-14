@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { RoundPixel, widthDPI } from '../../utils/roundPixel'
-import { shadow } from '../../globalStyles/shadow'
-import { PALLET } from '../../globalStyles/palletColor'
+import { shadow } from '../../styles/shadow'
+import { PALLET } from '../../styles/palletColor'
 
 const styles = StyleSheet.create({
   container: {

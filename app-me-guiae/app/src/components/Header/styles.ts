@@ -3,7 +3,7 @@ import Constants from 'expo-constants'
 
 import { RoundPixel } from '../../utils/roundPixel'
 
-import { PALLET } from '../../globalStyles/palletColor'
+import { PALLET } from '../../styles/palletColor'
 
 const styles = StyleSheet.create({
   header: {

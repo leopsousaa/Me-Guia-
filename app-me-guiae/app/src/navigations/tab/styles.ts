@@ -1,8 +1,8 @@
 import { StyleSheet, Platform } from 'react-native'
 
 import { RoundPixel } from '../../utils/roundPixel'
-import { PALLET } from '../../globalStyles/palletColor'
-import { shadow } from '../../globalStyles/shadow'
+import { PALLET } from '../../styles/palletColor'
+import { shadow } from '../../styles/shadow'
 
 const styles = StyleSheet.create({
   ContainerCustomButtonMenu: {
