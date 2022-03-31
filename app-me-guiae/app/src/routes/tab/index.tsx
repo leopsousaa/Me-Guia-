@@ -3,34 +3,34 @@ import { Image, View, Text, TouchableOpacity } from 'react-native'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+import { RootStackParamList } from '../../types/routes/RootParmList'
+
 import { HomeNavigator, GuideNavigator } from '../stack'
 import ExplorerScreen from '../../screens/Explorer'
 import FavoriteScreen from '../../screens/Favorite'
 import TipScreen from '../../screens/Tip'
 
-// import Header from "../../components/Header";
-
 import { RoundPixel } from '../../utils/roundPixel'
-import { PALLET } from '../../globalStyles/palletColor'
+import { PALLET } from '../../styles/palletColor'
 
 import styles from './styles'
 
-const HomeButton = ({ children, onPress }) => (
-  <>
-    <TouchableOpacity
-      style={styles.ContainerCustomButtonMenu}
-      onPress={onPress}
-    >
-      <View style={styles.CustomButtonMenu}>{children}</View>
-    </TouchableOpacity>
-  </>
+interface PropsType {
+  children: React.ReactChild
+  onPress: () => any
+}
+
+const HomeButton = ({ children, onPress }: PropsType) => (
+  <TouchableOpacity style={styles.ContainerCustomButtonMenu} onPress={onPress}>
+    <View style={styles.CustomButtonMenu}>{children}</View>
+  </TouchableOpacity>
 )
 
-const TabNavigator = createBottomTabNavigator()
+const RootStackNavigator = createBottomTabNavigator()
 
 const Navigation = () => {
   return (
-    <TabNavigator.Navigator
+    <RootStackNavigator.Navigator
       initialRouteName="Home"
       screenOptions={{
         headerShown: false,
@@ -38,7 +38,7 @@ const Navigation = () => {
         tabBarStyle: styles.barStyle
       }}
     >
-      <TabNavigator.Screen
+      <RootStackNavigator.Screen
         name="Tip"
         component={TipScreen}
         options={{
@@ -65,7 +65,7 @@ const Navigation = () => {
           )
         }}
       />
-      <TabNavigator.Screen
+      <RootStackNavigator.Screen
         name="Explorer"
         component={ExplorerScreen}
         options={{
@@ -92,7 +92,7 @@ const Navigation = () => {
           )
         }}
       />
-      <TabNavigator.Screen
+      <RootStackNavigator.Screen
         name="Home"
         component={HomeNavigator}
         options={{
@@ -110,7 +110,7 @@ const Navigation = () => {
           tabBarButton: props => <HomeButton {...props} />
         }}
       />
-      <TabNavigator.Screen
+      <RootStackNavigator.Screen
         name="Favorite"
         component={FavoriteScreen}
         options={{
@@ -137,7 +137,7 @@ const Navigation = () => {
           )
         }}
       />
-      <TabNavigator.Screen
+      <RootStackNavigator.Screen
         name="Guide"
         component={GuideNavigator}
         options={{
@@ -164,7 +164,7 @@ const Navigation = () => {
           )
         }}
       />
-    </TabNavigator.Navigator>
+    </RootStackNavigator.Navigator>
   )
 }
 

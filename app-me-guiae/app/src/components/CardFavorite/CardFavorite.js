@@ -1,15 +1,15 @@
-import React from "react";
-import { Text, View, Pressable, Image } from "react-native";
+import React from 'react'
+import { Text, View, Pressable, Image } from 'react-native'
 
-import { PALLET } from "../../globalStyles/palletColor";
-import styles from "./styles";
-import { viewStyles } from "../../globalStyles/viewStyles";
+import { PALLET } from '../../styles/palletColor'
+import styles from './styles'
+import { viewStyles } from '../../styles/viewStyles'
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons'
 
 const CardRoute = ({ title, time, distance, rating, thumbnail }) => {
   return (
-    <Pressable style={styles.container} onPress={() => alert("view route")}>
+    <Pressable style={styles.container} onPress={() => alert('view route')}>
       <Image source={{ uri: thumbnail }} style={styles.Thumbnail} />
 
       <View style={styles.containerTitle}>
@@ -39,7 +39,7 @@ const CardRoute = ({ title, time, distance, rating, thumbnail }) => {
         </View>
       </View>
     </Pressable>
-  );
-};
+  )
+}
 
-export default CardRoute;
+export default CardRoute

@@ -1,11 +1,11 @@
-import React from "react";
-import { TouchableOpacity, Text, View, Image, Pressable } from "react-native";
+import React from 'react'
+import { TouchableOpacity, Text, View, Image, Pressable } from 'react-native'
 
-import { PALLET } from "../../globalStyles/palletColor";
-import styles from "./styles";
-import { viewStyles } from "../../globalStyles/viewStyles";
+import { PALLET } from '../../styles/palletColor'
+import styles from './styles'
+import { viewStyles } from '../../styles/viewStyles'
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons'
 
 const CardRoute = ({
   image,
@@ -14,7 +14,7 @@ const CardRoute = ({
   distance,
   rating,
   pressViewGuides,
-  pressViewRoute,
+  pressViewRoute
 }) => {
   return (
     <Pressable style={styles.container} onPress={pressViewRoute}>
@@ -48,7 +48,7 @@ const CardRoute = ({
         </View>
       </View>
     </Pressable>
-  );
-};
+  )
+}
 
-export default CardRoute;
+export default CardRoute

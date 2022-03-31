@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react'
 
-import ScrollContainer from "../../components/ScrollContainer";
-import CardRoute from "../../components/CardRoute";
+import ScrollContainer from '../../components/ScrollContainer'
+import CardRoute from '../../components/CardRoute'
 
-import { DB } from "../../services/FakeAPI";
+import { DB } from '../../services/FakeAPI'
 
 const Home = ({ navigation }) => {
   function handleRouteNavigation(id, image, title, time, distance, rating) {
-    navigation.navigate("Details Route", {
+    navigation.navigate('Details Route', {
       id,
       image,
       title,
       time,
       distance,
-      rating,
-    });
+      rating
+    })
   }
 
   function handleGuideNavigation(id) {
-    navigation.navigate("Guides", {
-      id,
-    });
+    navigation.navigate('Guides', {
+      id
+    })
   }
 
   return (
     <ScrollContainer>
-      {DB.map((item) => (
+      {DB.map(item => (
         <CardRoute
           key={item.id}
           image={item.image}
@@ -38,7 +38,7 @@ const Home = ({ navigation }) => {
         />
       ))}
     </ScrollContainer>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
