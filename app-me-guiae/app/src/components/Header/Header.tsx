@@ -15,8 +15,8 @@ const Header = () => {
 
   return (
     <View style={styles.header}>
-      <StatusBar barStyle="light-content" />
-      <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+      <StatusBar />
+      <TouchableOpacity onPress={() => console.log('TOOGLE DOWN')}>
         <Image
           source={require('../../../assets/icons/hamburguer-menu.png')}
           resizeMode="contain"

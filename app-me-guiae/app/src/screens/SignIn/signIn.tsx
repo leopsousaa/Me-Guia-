@@ -8,30 +8,31 @@ import LoginInput from '../../components/LoginInput/LoginInput'
 
 import { styles } from './styles'
 
-const SignIn = ({ navigation }) => {
+const SignIn: React.FC = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [visiblePassword, setVisiblePassword] = useState(false)
 
   function handleSignIn() {
     firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then(res => console.log(res))
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(res => console.log(res))
   }
 
   return (
     <ScreenContainer>
-      <Image style={styles.logo} resizeMode='cover' />
+      {/* <Image style={styles.logo} resizeMode="cover" source={''} /> */}
       <View>
-        <LoginInput 
-          placeholder='Email'
-          iconName='mail-outline'
+        <LoginInput
+          placeholder="Email"
+          name="mail-outline"
           event={e => setEmail(e)}
+          hidePass={false}
         />
         <LoginInput
-          placeholder='Senha'
-          iconName='lock-closed-outline'
+          placeholder="Senha"
+          name="lock-closed-outline"
           event={e => setPassword(e)}
           hidePass={visiblePassword}
           toggleHidePass={() => setVisiblePassword(!visiblePassword)}

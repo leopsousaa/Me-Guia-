@@ -3,8 +3,6 @@ import { Image, View, Text, TouchableOpacity } from 'react-native'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { RootStackParamList } from '../../types/routes/RootParmList'
-
 import { HomeNavigator, GuideNavigator } from '../stack'
 import ExplorerScreen from '../../screens/Explorer'
 import FavoriteScreen from '../../screens/Favorite'
@@ -16,7 +14,7 @@ import { PALLET } from '../../styles/palletColor'
 import styles from './styles'
 
 interface PropsType {
-  children: React.ReactChild
+  children: React.ReactChild | JSX.Element
   onPress: () => any
 }
 

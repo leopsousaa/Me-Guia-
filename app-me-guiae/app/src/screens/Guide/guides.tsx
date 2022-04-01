@@ -1,42 +1,35 @@
-import React from "react";
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
 
-import CardGuide from "../../components/CardGuide/CardGuide";
-import ScrollContainer from "../../components/ScrollContainer";
+import CardGuide from '../../components/CardGuide/CardGuide'
+import ScrollContainer from '../../components/ScrollContainer'
 
-import { DATA_GUIDE_FAKE } from "./data";
+import { DATA_GUIDE_FAKE } from './data'
 
-const Guides = ({ navigation }) => {
-  function handleGuideNavigation(
-    id,
-    thumbnail,
-    fullName,
-    age,
-    city,
-    description,
-    achievements,
-    specialties,
-    cape,
-    routes,
-    value
-  ) {
-    navigation.navigate("Details Guide", {
-      id,
-      thumbnail,
-      fullName,
-      age,
-      city,
-      description,
-      achievements,
-      specialties,
-      cape,
-      routes,
-      value,
-    });
+interface PropsType {
+  id: number
+  thumbnail: string
+  fullName: string
+  age: number
+  city: string
+  description: string
+  achievements: string
+  specialties: string
+  cape: string
+  routes: string
+  value: number
+}
+
+const Guides: React.FC = () => {
+  const navigation = useNavigation()
+
+  const handleGuideNavigation: React.FC<[PropsType]> = ({}) => {
+    // navigation.navigate('DetailsGuide')
   }
 
   return (
     <ScrollContainer>
-      {DATA_GUIDE_FAKE.map((item) => (
+      {DATA_GUIDE_FAKE.map(item => (
         <CardGuide
           key={item.id}
           pressViewDetails={() =>
@@ -64,7 +57,7 @@ const Guides = ({ navigation }) => {
         />
       ))}
     </ScrollContainer>
-  );
-};
+  )
+}
 
-export default Guides;
+export default Guides

@@ -9,26 +9,7 @@ import { shadow } from '../../styles/shadow'
 import { RoundPixel, widthDPI } from '../../utils/roundPixel'
 
 interface PropsType {
-  icon:
-    | 'text'
-    | 'link'
-    | 'search'
-    | 'image'
-    | 'alert'
-    | 'checkbox'
-    | 'menu'
-    | 'radio'
-    | 'timer'
-    | 'key'
-    | 'body'
-    | 'code'
-    | 'map'
-    | 'time'
-    | 'ellipse'
-    | 'filter'
-    | 'stop'
-    | 'close'
-    | 'book'
+  name: keyof typeof Ionicons.glyphMap
   title: string
   description: string
 }
@@ -36,7 +17,7 @@ interface PropsType {
 const CardTip: React.FC<PropsType> = props => {
   return (
     <View style={styles.cardContainer}>
-      <Ionicons name={props.icon} style={styles.icon} size={36} />
+      <Ionicons name={props.name} style={styles.icon} size={36} />
       <View style={styles.cardTexts}>
         <Text style={styles.title}>{props.title}</Text>
         <Text style={styles.text}>{props.description}</Text>

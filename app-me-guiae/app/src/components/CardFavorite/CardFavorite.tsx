@@ -39,11 +39,11 @@ const CardRoute: React.FC<PropsType> = props => {
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}> {distance} </Text>
+          <Text style={styles.Text}> {props.distance} </Text>
         </View>
         <View style={viewStyles.columnReverse}>
           <Ionicons name="heart-sharp" size={24} color={PALLET.primaryColor} />
-          <Text style={styles.Text}> {rating} </Text>
+          <Text style={styles.Text}> {props.rating} </Text>
         </View>
       </View>
     </Pressable>

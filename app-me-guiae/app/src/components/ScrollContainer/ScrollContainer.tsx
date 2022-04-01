@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet } from 'react-native'
 import { RoundPixel } from '../../utils/roundPixel'
 
 interface PropsType {
-  children: React.ReactChild
+  children: JSX.Element[] | JSX.Element
 }
 
 const ScrollContainer = ({ children }: PropsType) => {
