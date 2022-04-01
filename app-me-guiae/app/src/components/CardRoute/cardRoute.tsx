@@ -7,21 +7,23 @@ import { viewStyles } from '../../styles/viewStyles'
 
 import { Ionicons } from '@expo/vector-icons'
 
-const CardRoute = ({
-  image,
-  title,
-  time,
-  distance,
-  rating,
-  pressViewGuides,
-  pressViewRoute
-}) => {
+interface PropsType {
+  image: string
+  title: string
+  time: string
+  distance: string
+  rating: number
+  pressViewGuides: () => any
+  pressViewRoute: () => any
+}
+
+const CardRoute: React.FC<PropsType> = props => {
   return (
-    <Pressable style={styles.container} onPress={pressViewRoute}>
-      <Image source={{ uri: image }} style={styles.image} />
+    <Pressable style={styles.container} onPress={props.pressViewRoute}>
+      <Image source={{ uri: props.image }} style={styles.image} />
       <View style={viewStyles.row}>
-        <Text style={styles.title}> {title} </Text>
-        <TouchableOpacity style={styles.button} onPress={pressViewGuides}>
+        <Text style={styles.title}> {props.title} </Text>
+        <TouchableOpacity style={styles.button} onPress={props.pressViewGuides}>
           <Text style={styles.textBtn}>Ver Guias</Text>
         </TouchableOpacity>
       </View>
@@ -32,7 +34,7 @@ const CardRoute = ({
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}> {time} </Text>
+          <Text style={styles.Text}> {props.time} </Text>
         </View>
         <View style={viewStyles.row}>
           <Ionicons
@@ -40,11 +42,11 @@ const CardRoute = ({
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}> {distance} </Text>
+          <Text style={styles.Text}> {props.distance} </Text>
         </View>
         <View style={viewStyles.columnReverse}>
           <Ionicons name="heart-sharp" size={24} color={PALLET.primaryColor} />
-          <Text style={styles.Text}> {rating} </Text>
+          <Text style={styles.Text}> {props.distance} </Text>
         </View>
       </View>
     </Pressable>

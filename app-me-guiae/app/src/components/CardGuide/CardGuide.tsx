@@ -1,5 +1,12 @@
 import React from 'react'
-import { View, StyleSheet, Text, Image, Pressable } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  Pressable,
+  GestureResponderEvent
+} from 'react-native'
 
 import { PALLET } from '../../styles/palletColor'
 import { shadow } from '../../styles/shadow'
@@ -7,39 +14,53 @@ import { RoundPixel, widthDPI } from '../../utils/roundPixel'
 
 import { Ionicons } from '@expo/vector-icons'
 
-const CardGuide = ({
-  id,
-  thumbnail,
-  fullName,
-  age,
-  city,
-  description,
-  specialties,
-  achievements,
-  pressViewDetails
-}) => {
+interface PropsType {
+  id: number
+  thumbnail: string
+  fullName: string
+  age: number
+  city: string
+  description: string
+  specialties: string
+  achievements:
+    | 'text'
+    | 'link'
+    | 'search'
+    | 'image'
+    | 'alert'
+    | 'checkbox'
+    | 'menu'
+    | 'radio'
+    | 'timer'
+    | 'key'
+    | 'body'
+    | 'code'
+    | 'map'
+    | 'time'
+    | 'ellipse'
+    | 'filter'
+    | 'stop'
+    | 'close'
+    | 'book'
+  pressViewDetails: (e: GestureResponderEvent) => any
+}
+
+const CardGuide: React.FC<PropsType> = props => {
   return (
     <>
       <Pressable
         style={styles.CardContainer}
-        onPress={pressViewDetails}
-        key={id}
+        onPress={props.pressViewDetails}
+        key={props.id}
       >
-        <Image source={{ uri: thumbnail }} style={styles.Thumbnail} />
+        <Image source={{ uri: props.thumbnail }} style={styles.Thumbnail} />
         <View style={styles.CardInfo}>
           <Text style={styles.text}>
-            {fullName} , {age} , {city}
+            {props.fullName} , {props.age} , {props.city}
           </Text>
-          <Text
-            style={
-              ([styles.text],
-              { fontFamily: 'Inter-Regular', fontSize: RoundPixel(12) })
-            }
-          >
-            {description}
-          </Text>
-          <Text style={styles.text}>Especialidades: {specialties}</Text>
-          <Ionicons name={achievements} size={20} />
+          <Text style={styles.text}>{props.description}</Text>
+          <Text style={styles.text}>Especialidades: {props.specialties}</Text>
+          <Ionicons name={props.achievements} size={20} />
         </View>
       </Pressable>
     </>

@@ -8,13 +8,38 @@ import { shadow } from '../../styles/shadow'
 
 import { RoundPixel, widthDPI } from '../../utils/roundPixel'
 
-const CardTip = ({ icon, title, description }) => {
+interface PropsType {
+  icon:
+    | 'text'
+    | 'link'
+    | 'search'
+    | 'image'
+    | 'alert'
+    | 'checkbox'
+    | 'menu'
+    | 'radio'
+    | 'timer'
+    | 'key'
+    | 'body'
+    | 'code'
+    | 'map'
+    | 'time'
+    | 'ellipse'
+    | 'filter'
+    | 'stop'
+    | 'close'
+    | 'book'
+  title: string
+  description: string
+}
+
+const CardTip: React.FC<PropsType> = props => {
   return (
     <View style={styles.cardContainer}>
-      <Ionicons name={icon} style={styles.icon} size={36} />
+      <Ionicons name={props.icon} style={styles.icon} size={36} />
       <View style={styles.cardTexts}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.text}>{description}</Text>
+        <Text style={styles.title}>{props.title}</Text>
+        <Text style={styles.text}>{props.description}</Text>
       </View>
     </View>
   )

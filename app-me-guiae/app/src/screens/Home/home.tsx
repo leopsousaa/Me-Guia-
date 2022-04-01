@@ -4,10 +4,22 @@ import ScrollContainer from '../../components/ScrollContainer'
 import CardRoute from '../../components/CardRoute'
 
 import { DB } from '../../services/FakeAPI'
+import { useNavigation } from '@react-navigation/native'
 
-const Home = ({ navigation }) => {
+interface PropsType {
+  id: string
+  image: string
+  title: string
+  time: string
+  distance: string
+  rating: number
+}
+
+const Home: React.FC<PropsType> = props => {
+  const navigation = useNavigation()
+
   function handleRouteNavigation(id, image, title, time, distance, rating) {
-    navigation.navigate('Details Route', {
+    navigation.navigate('DetailsRoute', {
       id,
       image,
       title,

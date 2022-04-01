@@ -7,13 +7,21 @@ import { viewStyles } from '../../styles/viewStyles'
 
 import { Ionicons } from '@expo/vector-icons'
 
-const CardRoute = ({ title, time, distance, rating, thumbnail }) => {
+interface PropsType {
+  title: string
+  time: number
+  distance: number
+  rating: string
+  thumbnail: string
+}
+
+const CardRoute: React.FC<PropsType> = props => {
   return (
     <Pressable style={styles.container} onPress={() => alert('view route')}>
-      <Image source={{ uri: thumbnail }} style={styles.Thumbnail} />
+      <Image source={{ uri: props.thumbnail }} style={styles.Thumbnail} />
 
       <View style={styles.containerTitle}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{props.title}</Text>
       </View>
 
       <View style={styles.cardInfo}>
@@ -23,7 +31,7 @@ const CardRoute = ({ title, time, distance, rating, thumbnail }) => {
             size={24}
             color={PALLET.primaryColor}
           />
-          <Text style={styles.Text}> {time} </Text>
+          <Text style={styles.Text}> {props.time} </Text>
         </View>
         <View style={viewStyles.row}>
           <Ionicons
