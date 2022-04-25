@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import { useFonts } from 'expo-font'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
+import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 
+import DrawerNavigator from './src/routes/drawer'
 import { NavigationContainer } from '@react-navigation/native'
-import DrawerNavigator from './src/navigations/drawer'
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -26,9 +27,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }
 

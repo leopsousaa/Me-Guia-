@@ -1,19 +1,19 @@
-import React from "react";
-import { Text, StyleSheet } from "react-native";
+import React from 'react'
+import { Text, StyleSheet } from 'react-native'
 
-import ScrollContainer from "../../components/ScrollContainer";
-import CardFavorite from "../../components/CardFavorite";
+import ScrollContainer from '../../components/ScrollContainer'
+import CardFavorite from '../../components/CardFavorite'
 
-import { DATA_FAVORITE_FAKE } from "./data";
-import { PALLET } from "../../globalStyles/palletColor";
-import { RoundPixel } from "../../utils/roundPixel";
+import { DATA_FAVORITE_FAKE } from './data'
+import { PALLET } from '../../styles/palletColor'
+import { RoundPixel } from '../../utils/roundPixel'
 
 const favorite = () => {
   return (
     <ScrollContainer>
       <Text style={styles.title}>Meus Favoritos</Text>
 
-      {DATA_FAVORITE_FAKE.map((item) => (
+      {DATA_FAVORITE_FAKE.map(item => (
         <CardFavorite
           key={item.id}
           title={item.name}
@@ -24,17 +24,17 @@ const favorite = () => {
         />
       ))}
     </ScrollContainer>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: "BebasNeue-Regular",
+    fontFamily: 'BebasNeue-Regular',
     color: PALLET.secondColor,
     fontSize: RoundPixel(24),
     left: RoundPixel(16),
-    alignSelf: "baseline",
-  },
-});
+    alignSelf: 'baseline'
+  }
+})
 
-export default favorite;
+export default favorite
