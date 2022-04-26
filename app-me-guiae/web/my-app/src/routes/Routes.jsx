@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "../pages/Login";
 
-export const Routes = () => {
+export const RoutesDOM = () => {
   //   const [checking, setChecking] = useState();
   //   const [isLoggedIn, setIsLoggedIn] = useState();
   //   useEffect(()=>{
@@ -17,10 +12,9 @@ export const Routes = () => {
 
   return (
     <Router>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Redirect to="/login" />
-      </Switch>
+      <Routes>
+        <Route exact path="/login" element={<Login />} />
+      </Routes>
     </Router>
   );
 };

@@ -1,7 +1,7 @@
-import { Routes } from "./routes/Routes";
+import { RoutesDOM } from "./routes/Routes";
 
 function App() {
-  return <Routes />;
+  return <RoutesDOM />;
 }
 
 export default App;
