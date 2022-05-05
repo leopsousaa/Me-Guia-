@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import {
   getAuth,
+  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
@@ -30,17 +31,37 @@ const provider = new GoogleAuthProvider();
 const AuthPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [passwordConfirm, setPasswordConfirm] = useState<string>("");
   const auth = getAuth(app);
 
-  function signUp() {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        console.log("Response:", res);
+  function signIn() {
+    console.log("AUTH:", auth);
+    console.log("EMAIL:", email);
+    console.log("PASSWORD:", password);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        console.log("Success:", user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("Error", errorMessage);
+        console.log(`Error ${errorMessage} cod: ${errorCode}`);
+      });
+  }
+
+  function signUp() {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        console.log("Success:", user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`Error ${errorMessage} cod: ${errorCode}`);
       });
   }
 
@@ -55,7 +76,7 @@ const AuthPage: React.FC = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log("Error", errorMessage);
+        console.log(`Error ${errorMessage} cod: ${errorCode}`);
       });
   }
 
@@ -86,7 +107,7 @@ const AuthPage: React.FC = () => {
             />
           </Fieldset>
           <Flex css={{ marginTop: 20, justifyContent: "center" }}>
-            <Button variant="green" onClick={() => console.log("Entrar")}>
+            <Button variant="green" onClick={() => signIn()}>
               Entrar
             </Button>
           </Flex>
@@ -95,16 +116,28 @@ const AuthPage: React.FC = () => {
         <TabsContent value="tab2">
           <Text>Você deseja embarcar nessa nova aventura com o Me Guiê? </Text>
           <Fieldset>
-            <Label htmlFor="currentPassword">E-mail</Label>
-            <Input id="currentPassword" type="password" />
+            <Label htmlFor="email">E-mail</Label>
+            <Input
+              id="email"
+              type="text"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </Fieldset>
           <Fieldset>
-            <Label htmlFor="newPassword">Senha</Label>
-            <Input id="newPassword" type="password" />
+            <Label htmlFor="password">Senha</Label>
+            <Input
+              id="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </Fieldset>
           <Fieldset>
             <Label htmlFor="confirmPassword">Confirme sua senha</Label>
-            <Input id="confirmPassword" type="password" />
+            <Input
+              id="confirmPassword"
+              type="password"
+              onChange={(e) => setPasswordConfirm(e.target.value)}
+            />
           </Fieldset>
           <Flex css={{ marginTop: 20, justifyContent: "center" }}>
             <Button variant="green" onClick={() => signUp()}>
