@@ -12,7 +12,7 @@ export const StyledTabs = styled(TabsPrimitive.Root, {
 export const StyledList = styled(TabsPrimitive.List, {
   flexShrink: 0,
   display: "flex",
-  borderBottom: `1px solid ${mauve.mauve6}`,
+  borderBottom: `1px solid ${mauve.mauve1}`,
 });
 
 export const StyledTrigger = styled(TabsPrimitive.Trigger, {
@@ -36,7 +36,6 @@ export const StyledTrigger = styled(TabsPrimitive.Trigger, {
     color: violet.violet11,
     boxShadow: "inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor",
   },
-  "&:focus": { position: "relative", boxShadow: `0 0 0 2px black` },
 });
 
 export const StyledContent = styled(TabsPrimitive.Content, {
@@ -46,7 +45,6 @@ export const StyledContent = styled(TabsPrimitive.Content, {
   borderBottomLeftRadius: 6,
   borderBottomRightRadius: 6,
   outline: "none",
-  "&:focus": { boxShadow: `0 0 0 2px black` },
 });
 
 // Exports
@@ -57,7 +55,10 @@ export const TabsContent = StyledContent;
 
 // Your app...
 export const Box = styled("div", {
-  backgroundColor: violet.violet12,
+  backgroundImage: `linear-gradient(19deg, ${violet.violet10} 0%, ${green.green10} 100%)`,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   height: "100vh",
   width: "100vw",
 });
