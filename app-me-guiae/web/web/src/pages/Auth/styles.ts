@@ -59,6 +59,7 @@ export const Box = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  flexDirection: "column",
   height: "100vh",
   width: "100vw",
 });
@@ -69,6 +70,15 @@ export const Text = styled("div", {
   color: mauve.mauve11,
   fontSize: 15,
   lineHeight: 1.5,
+
+  variants: {
+    variant: {
+      light: {
+        color: "white",
+        marginTop: 20,
+      },
+    },
+  },
 });
 
 export const Button = styled("button", {
