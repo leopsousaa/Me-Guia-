@@ -1,4 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+
+import { app } from "../../services/firebase";
+
+import GoogleButton from "react-google-button";
 
 import {
   Box,
@@ -14,7 +25,40 @@ import {
   Button,
 } from "./styles";
 
+const provider = new GoogleAuthProvider();
+
 const AuthPage: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const auth = getAuth(app);
+
+  function signUp() {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        console.log("Response:", res);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error", errorMessage);
+      });
+  }
+
+  function signUpWithGoogle() {
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        console.log("Response:", res);
+        const credential = GoogleAuthProvider.credentialFromResult(res);
+        const token = credential?.accessToken;
+        const user = res.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error", errorMessage);
+      });
+  }
+
   return (
     <Box>
       <Tabs defaultValue="tab1">
@@ -26,15 +70,23 @@ const AuthPage: React.FC = () => {
         <TabsContent value="tab1">
           <Text>Bora... mais um tour te aguarda...</Text>
           <Fieldset>
-            <Label htmlFor="name">E-mail</Label>
-            <Input id="name" />
+            <Label htmlFor="email">E-mail</Label>
+            <Input
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </Fieldset>
           <Fieldset>
-            <Label htmlFor="username">Senha</Label>
-            <Input id="username" />
+            <Label htmlFor="password">Senha</Label>
+            <Input
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </Fieldset>
           <Flex css={{ marginTop: 20, justifyContent: "center" }}>
-            <Button variant="green" onClick={() => alert("Entrar")}>
+            <Button variant="green" onClick={() => console.log("Entrar")}>
               Entrar
             </Button>
           </Flex>
@@ -55,12 +107,18 @@ const AuthPage: React.FC = () => {
             <Input id="confirmPassword" type="password" />
           </Fieldset>
           <Flex css={{ marginTop: 20, justifyContent: "center" }}>
-            <Button variant="green" onClick={() => alert("Entrar")}>
+            <Button variant="green" onClick={() => signUp()}>
               Cadastrar
             </Button>
           </Flex>
         </TabsContent>
       </Tabs>
+      <Text variant="light">ou</Text>
+      <GoogleButton
+        onClick={() => signUpWithGoogle()}
+        style={{ marginTop: 10 }}
+        label="Entrar com o Google"
+      />
     </Box>
   );
 };
