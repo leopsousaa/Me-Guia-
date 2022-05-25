@@ -1,7 +1,9 @@
-type LayoutProps = {
-  text: string;
+import React from "react";
+
+import {} from "./styles";
+
+const LayoutComponent: React.FC = () => {
+  return <div />;
 };
 
-export default function LayoutComponent(props: LayoutProps) {
-  return <h1>Hello Rocketseat!</h1>;
-}
+export default LayoutComponent;

@@ -17,7 +17,7 @@ export const StyledList = styled(TabsPrimitive.List, {
 
 export const StyledTrigger = styled(TabsPrimitive.Trigger, {
   all: "unset",
-  fontFamily: "inherit",
+  fontFamily: "sans-serif",
   backgroundColor: "white",
   padding: "0 20px",
   height: 45,
@@ -60,7 +60,7 @@ export const Box = styled("div", {
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column",
-  height: "100vh",
+  minHeight: "100vh",
   width: "100vw",
 });
 export const Flex = styled("div", { display: "flex" });
@@ -68,6 +68,7 @@ export const Flex = styled("div", { display: "flex" });
 export const Text = styled("div", {
   marginBottom: 20,
   color: mauve.mauve11,
+  fontFamily: "sans-serif",
   fontSize: 15,
   lineHeight: 1.5,
 
@@ -92,6 +93,7 @@ export const Button = styled("button", {
   lineHeight: 1,
   fontWeight: 500,
   height: 35,
+  fontFamily: "sans-serif",
 
   variants: {
     variant: {
@@ -130,6 +132,7 @@ export const Label = styled("label", {
   marginBottom: 10,
   color: violet.violet12,
   display: "block",
+  fontFamily: "sans-serif",
 });
 
 export const Input = styled("input", {
@@ -142,5 +145,6 @@ export const Input = styled("input", {
   color: violet.violet11,
   boxShadow: `0 0 0 1px ${violet.violet7}`,
   height: 35,
+  fontFamily: "sans-serif",
   "&:focus": { boxShadow: `0 0 0 2px ${violet.violet8}` },
 });

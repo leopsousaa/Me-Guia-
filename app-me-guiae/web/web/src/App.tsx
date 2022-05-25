@@ -1,8 +1,10 @@
 import { RoutesApp } from "./Routes";
 
-import "./globalStyles.css";
+import { globalStyles } from "./styles/globalStyles";
 
 function App() {
+  globalStyles();
+
   return <RoutesApp />;
 }
 
