@@ -1,9 +1,9 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { LayoutComponent } from "../../components/Layout/Layout";
 
 const HomePage: React.FC = () => {
-  return <div />;
+  return <LayoutComponent />;
 };
 
 export default HomePage;
