@@ -12,8 +12,9 @@ import { app } from "../../services/firebase";
 
 import GoogleButton from "react-google-button";
 
+import { LayoutComponent } from "../../components/Layout/Layout";
+
 import {
-  Box,
   Tabs,
   TabsList,
   TabsTrigger,
@@ -81,7 +82,7 @@ const AuthPage: React.FC = () => {
   }
 
   return (
-    <Box>
+    <LayoutComponent>
       <Tabs defaultValue="tab1">
         <TabsList aria-label="Manage your account">
           <TabsTrigger value="tab1">Entrar</TabsTrigger>
@@ -152,7 +153,7 @@ const AuthPage: React.FC = () => {
         style={{ marginTop: 10 }}
         label="Entrar com o Google"
       />
-    </Box>
+    </LayoutComponent>
   );
 };
 

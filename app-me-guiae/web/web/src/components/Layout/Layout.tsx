@@ -1,9 +1,11 @@
 import React from "react";
 
-import {} from "./styles";
+import { Container } from "./styles";
 
-const LayoutComponent: React.FC = () => {
-  return <div />;
+type LayoutProps = {
+  children?: React.ReactNode;
 };
 
-export default LayoutComponent;
+export function LayoutComponent({ children }: LayoutProps) {
+  return <Container>{children}</Container>;
+}

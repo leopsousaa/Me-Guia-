@@ -53,16 +53,6 @@ export const TabsList = StyledList;
 export const TabsTrigger = StyledTrigger;
 export const TabsContent = StyledContent;
 
-// Your app...
-export const Box = styled("div", {
-  backgroundImage: `linear-gradient(19deg, ${violet.violet10} 0%, ${green.green10} 100%)`,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  flexDirection: "column",
-  minHeight: "100vh",
-  width: "100vw",
-});
 export const Flex = styled("div", { display: "flex" });
 
 export const Text = styled("div", {
