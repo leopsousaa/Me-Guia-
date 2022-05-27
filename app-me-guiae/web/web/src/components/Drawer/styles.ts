@@ -1,7 +1,7 @@
 import { styled } from "@stitches/react";
 import { whiteA } from "@radix-ui/colors";
 
-export const DrawerContainer = styled("div", {
+export const DrawerContainer = styled("aside", {
   backgroundColor: whiteA.whiteA12,
   width: "100px",
   height: "96vh",

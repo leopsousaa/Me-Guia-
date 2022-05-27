@@ -7,3 +7,18 @@ export const globalStyles = globalCss({
 () => {
   globalStyles();
 };
+
+export const center = {
+  display: "flex",
+  alignItems: "center",
+};
+
+export const row = {
+  display: "flex",
+  flexDirection: "row",
+};
+
+export const column = {
+  display: "flex",
+  flexDirection: "column",
+};

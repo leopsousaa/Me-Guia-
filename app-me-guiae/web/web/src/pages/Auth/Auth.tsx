@@ -26,6 +26,7 @@ import {
   Flex,
   Button,
 } from "./styles";
+import { center } from "../../styles/globalStyles";
 
 const provider = new GoogleAuthProvider();
 
@@ -82,7 +83,7 @@ const AuthPage: React.FC = () => {
   }
 
   return (
-    <LayoutComponent>
+    <LayoutComponent style={center}>
       <Tabs defaultValue="tab1">
         <TabsList aria-label="Manage your account">
           <TabsTrigger value="tab1">Entrar</TabsTrigger>
