@@ -801,27 +801,6 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-layout-effect" "0.1.0"
 
-"@radix-ui/react-navigation-menu@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-navigation-menu/-/react-navigation-menu-0.1.2.tgz#b473607e1ae62368600e1439778c2411048d4a8c"
-  integrity sha512-b9+2ambunxMNw4pgOt9xqzVN/A5NPajpiKvR45zI/BS/uOWfV1A3N5Kn+OIbRMln9GyBnuoxXV0tUBLC2rAzpw==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@radix-ui/primitive" "0.1.0"
-    "@radix-ui/react-collection" "0.1.4"
-    "@radix-ui/react-compose-refs" "0.1.0"
-    "@radix-ui/react-context" "0.1.1"
-    "@radix-ui/react-dismissable-layer" "0.1.5"
-    "@radix-ui/react-id" "0.1.5"
-    "@radix-ui/react-presence" "0.1.2"
-    "@radix-ui/react-primitive" "0.1.4"
-    "@radix-ui/react-use-callback-ref" "0.1.0"
-    "@radix-ui/react-use-controllable-state" "0.1.0"
-    "@radix-ui/react-use-direction" "0.1.0"
-    "@radix-ui/react-use-layout-effect" "0.1.0"
-    "@radix-ui/react-use-previous" "0.1.1"
-    "@radix-ui/react-visually-hidden" "0.1.4"
-
 "@radix-ui/react-popover@0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-popover/-/react-popover-0.1.6.tgz#788e969239d9c55239678e615ab591b6b7ba5cdc"
@@ -943,13 +922,6 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-callback-ref" "0.1.0"
 
-"@radix-ui/react-use-direction@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-direction/-/react-use-direction-0.1.0.tgz#97ac1d52e497c974389e7988f809238ed72e7df7"
-  integrity sha512-NajpY/An9TCPSfOVkgWIdXJV+VuWl67PxB6kOKYmtNAFHvObzIoh8o0n9sAuwSAyFCZVq211FEf9gvVDRhOyiA==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-
 "@radix-ui/react-use-escape-keydown@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-0.1.0.tgz#dc80cb3753e9d1bd992adbad9a149fb6ea941874"
@@ -962,13 +934,6 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-0.1.0.tgz#ebf71bd6d2825de8f1fbb984abf2293823f0f223"
   integrity sha512-+wdeS51Y+E1q1Wmd+1xSSbesZkpVj4jsg0BojCbopWvgq5iBvixw5vgemscdh58ep98BwUbsFYnrywFhV9yrVg==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-
-"@radix-ui/react-use-previous@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-use-previous/-/react-use-previous-0.1.1.tgz#0226017f72267200f6e832a7103760e96a6db5d0"
-  integrity sha512-O/ZgrDBr11dR8rhO59ED8s5zIXBRFi8MiS+CmFGfi7MJYdLbfqVOmQU90Ghf87aifEgWe6380LA69KBneaShAg==
   dependencies:
     "@babel/runtime" "^7.13.10"
 
@@ -986,14 +951,6 @@
   integrity sha512-pTgWM5qKBu6C7kfKxrKPoBI2zZYZmp2cSXzpUiGM3qEBQlMLtYhaY2JXdXUCxz+XmD1YEjc8oRwvyfsD4AG4WA==
   dependencies:
     "@babel/runtime" "^7.13.10"
-
-"@radix-ui/react-visually-hidden@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-visually-hidden/-/react-visually-hidden-0.1.4.tgz#6c75eae34fb5d084b503506fbfc05587ced05f03"
-  integrity sha512-K/q6AEEzqeeEq/T0NPChvBqnwlp8Tl4NnQdrI/y8IOY7BRR+Ug0PEsVk6g48HJ7cA1//COugdxXXVVK/m0X1mA==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@radix-ui/react-primitive" "0.1.4"
 
 "@radix-ui/rect@0.1.1":
   version "0.1.1"
@@ -1685,6 +1642,11 @@ react-google-button@^0.7.2:
   integrity sha512-LPIqU2hIlc212kqks8MtKjRstquVkP3SIjxlK5B1nIfg2R7YqSusJAxZUkJA5dv/z6QeSuGyI9ujwV/VWMTyAA==
   dependencies:
     prop-types "^15.7.2"
+
+react-icons@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
+  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
 
 react-is@^16.13.1:
   version "16.13.1"
