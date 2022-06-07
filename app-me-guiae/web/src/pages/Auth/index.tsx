@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-import { useAuth } from "../hook/useAuth";
+import { useAuth } from "../../hook/useAuth";
 
-import illustration from "../assets/images/illustration.svg";
-import logo from "../assets/images/logo.svg";
-import googleIcon from "../assets/images/google-icon.svg";
+import googleIcon from "../../assets/images/google-icon.svg";
 
-import "../styles/auth.scss";
+import "./styles.scss";
 
-import { Button } from "../components/Button";
+import { Button } from "../../components/Button";
 
 export function Auth() {
   const navigate = useNavigate();
