@@ -1,17 +1,28 @@
 import React, { createContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  signOut,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
+
 import { app } from "../services/firebase";
 
 type UserType = {
   id: string;
-  name: string;
+  name?: string;
   email: string;
+  password?: string;
 };
 
 type AuthContextType = {
   user: UserType | undefined;
   signInWithGoogle: () => Promise<void>;
+  signInWithEmailPassword: (email: string, password: string) => Promise<void>;
+  SignOut: () => Promise<void>;
 };
 
 type AuthContextProviderProps = {
@@ -23,6 +34,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
+  const navigate = useNavigate();
   const [user, setUser] = useState<UserType>();
 
   useEffect(() => {
@@ -67,8 +79,38 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
   }
 
+  async function signInWithEmailPassword(email: string, password: string) {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+
+    if (result.user) {
+      if (!email || !password) {
+        throw new Error("Missing information email and password");
+      }
+
+      setUser({
+        id: result.user.uid,
+        email: email,
+        password: password,
+      });
+    } else {
+      throw new Error("Error!");
+    }
+  }
+
+  async function SignOut() {
+    await signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+      });
+  }
+
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider
+      value={{ user, signInWithGoogle, signInWithEmailPassword, SignOut }}
+    >
       {props.children}
     </AuthContext.Provider>
   );
